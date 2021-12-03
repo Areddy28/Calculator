@@ -1,0 +1,26 @@
+﻿@model Calculator
+
+@using (Html.BeginForm("Index", "Calculator", FormMethod.Post))
+
+{
+    <div>
+        @Html.LabelFor(m => m.Num1)
+        @Html.TextBoxFor(m => m.Num1)
+        @Html.ValidationMessageFor(m => m.Num1) 
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Num2)
+        @Html.TextBoxFor(m => m.Num2)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Operation)
+        @Html.DropDownListFor(m => m.Operation, new SelectList(Enum.GetValues(typeof(Operation))), "Select Operation")
+    </div>
+
+    <input type="submit" value="Submit" />
+
+
+
+}
